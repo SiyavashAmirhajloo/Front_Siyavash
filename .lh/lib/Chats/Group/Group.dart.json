@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/Chats/Group/Group.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1682346193152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682346349764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,10 @@\n import '../Group/widgets/group_item_widget.dart';\r\n import 'package:flutter/material.dart';\r\n \r\n // ignore_for_file: must_be_immutable\r\n-class Group extends StatefulWidget {\r\n-  Group({Key? key}) : super(key: key);\r\n-  @override\r\n-  State<Group> createState() => GroupScreen();\r\n-}\r\n \r\n-class GroupScreen extends State<Group> {\r\n+class GroupScreen extends StatelessWidget {\r\n   GlobalKey<NavigatorState> navigatorKey = GlobalKey();\r\n \r\n   Size size = WidgetsBinding.instance.window.physicalSize /\r\n       WidgetsBinding.instance.window.devicePixelRatio;\r\n"
+                }
+            ],
+            "date": 1682346193152,
+            "name": "Commit-0",
+            "content": "import '../Group/widgets/group_item_widget.dart';\r\nimport 'package:flutter/material.dart';\r\n\r\n// ignore_for_file: must_be_immutable\r\nclass Group extends StatefulWidget{\r\n  Group({Key? key}) : super(key: key);\r\n  @override\r\n  State<Group> createState() => GroupScreen();\r\n}\r\nclass GroupScreen extends State<Group> {\r\n  GlobalKey<NavigatorState> navigatorKey = GlobalKey();\r\n\r\n  Size size = WidgetsBinding.instance.window.physicalSize /\r\n      WidgetsBinding.instance.window.devicePixelRatio;\r\n  get height {\r\n    num statusBar = MediaQueryData.fromWindow(WidgetsBinding.instance.window)\r\n        .viewPadding\r\n        .top;\r\n    num bottomBar = MediaQueryData.fromWindow(WidgetsBinding.instance.window)\r\n        .viewPadding\r\n        .bottom;\r\n    num screenHeight = size.height - statusBar - bottomBar;\r\n    return screenHeight;\r\n  }\r\n\r\n  double getVerticalSize(double px) {\r\n    return ((px * height) / 844);\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      body: Padding(\r\n          padding: EdgeInsets.only(left: 24, right: 24),\r\n          child: ListView.separated(\r\n              physics: NeverScrollableScrollPhysics(),\r\n              shrinkWrap: true,\r\n              separatorBuilder: (context, index) {\r\n                return SizedBox(height: getVerticalSize(4));\r\n              },\r\n              itemCount: 8,\r\n              itemBuilder: (context, index) {\r\n                return GroupItemWidget();\r\n              })),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}
