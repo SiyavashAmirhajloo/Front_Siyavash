@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/Splash/Splash.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1683454338000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1683454374466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,16 @@\n import 'package:lango/Constance/theme.dart';\r\n import 'package:lango/main.dart';\r\n import 'package:flutter/material.dart';\r\n \r\n-class SplashScreen extends StatefulWidget {\r\n-  SplashScreen({Key? key}) : super(key: key);\r\n+class Splash extends StatefulWidget {\r\n+  Splash({Key? key}) : super(key: key);\r\n \r\n   @override\r\n-  _SplashScreenState createState() => _SplashScreenState();\r\n+  _SplashState createState() => _SplashState();\r\n }\r\n \r\n-class _SplashScreenState extends State<SplashScreen> {\r\n+class _SplashState extends State<Splash> {\r\n   @override\r\n   void initState() {\r\n     _loadNextScreen();\r\n     super.initState();\r\n"
+                },
+                {
+                    "date": 1683454508071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,41 @@\n+// ignore_for_file: deprecated_member_use, prefer_const_constructors_in_immutables, prefer_const_constructors, unnecessary_new, library_private_types_in_public_api, use_build_context_synchronously, unused_import\r\n+import 'package:lango/Constance/constance.dart';\r\n+import 'package:lango/Constance/theme.dart';\r\n+import 'package:lango/main.dart';\r\n+import 'package:flutter/material.dart';\r\n+\r\n+class Splash extends StatefulWidget {\r\n+  Splash({Key? key}) : super(key: key);\r\n+\r\n+  @override\r\n+  _SplashState createState() => _SplashState();\r\n+}\r\n+\r\n+class _SplashState extends State<Splash> {\r\n+  @override\r\n+  void initState() {\r\n+    _loadNextScreen();\r\n+    super.initState();\r\n+  }\r\n+\r\n+  _loadNextScreen() async {\r\n+    await Future.delayed(Duration(milliseconds: 3000));\r\n+    Navigator.pushReplacementNamed(context, Routes.INTRODUCTION);\r\n+  }\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Scaffold(\r\n+      body: Column(\r\n+        children: [\r\n+          Image.asset(\r\n+            AppTheme.isLightTheme ? ConstanceData.Splash : ConstanceData.Splash,\r\n+            width: MediaQuery.of(context).size.width,\r\n+            height: MediaQuery.of(context).size.height,\r\n+            fit: BoxFit.cover,\r\n+          ),\r\n+        ],\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                }
+            ],
+            "date": 1683454338000,
+            "name": "Commit-0",
+            "content": "// ignore_for_file: deprecated_member_use, prefer_const_constructors_in_immutables, prefer_const_constructors, unnecessary_new, library_private_types_in_public_api, use_build_context_synchronously, unused_import\r\nimport 'package:edumy/Constance/constance.dart';\r\nimport 'package:lango/Constance/theme.dart';\r\nimport 'package:edumy/main.dart';\r\nimport 'package:flutter/material.dart';\r\n\r\nclass SplashScreen extends StatefulWidget {\r\n  SplashScreen({Key? key}) : super(key: key);\r\n\r\n  @override\r\n  _SplashScreenState createState() => _SplashScreenState();\r\n}\r\n\r\nclass _SplashScreenState extends State<SplashScreen> {\r\n  @override\r\n  void initState() {\r\n    _loadNextScreen();\r\n    super.initState();\r\n  }\r\n\r\n  _loadNextScreen() async {\r\n    await Future.delayed(Duration(milliseconds: 3000));\r\n    Navigator.pushReplacementNamed(context, Routes.INTRODUCTION);\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      body: Column(\r\n        children: [\r\n          Image.asset(\r\n            AppTheme.isLightTheme ? ConstanceData.logo : ConstanceData.dlogo,\r\n            width: MediaQuery.of(context).size.width,\r\n            height: MediaQuery.of(context).size.height,\r\n            fit: BoxFit.cover,\r\n          ),\r\n        ],\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}
