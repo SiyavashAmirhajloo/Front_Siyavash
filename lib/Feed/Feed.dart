@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:lango/Constance/constance.dart';
 import 'package:lango/Constance/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:lango/Feed/Creat_Post.dart';
 
 class Feed extends StatefulWidget {
   const Feed({super.key});
@@ -259,7 +260,13 @@ class _FeedState extends State<Feed> {
       floatingActionButton: Padding(
           padding: const EdgeInsets.only(bottom: 85.0),
           child: FloatingActionButton(
-            onPressed: () => {},
+            onPressed: () => {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewPostScreen(),
+                  )),
+            },
             backgroundColor: HexColor("FFC02D"),
             child: Icon(
               Icons.add,

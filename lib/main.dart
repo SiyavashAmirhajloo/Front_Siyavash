@@ -13,6 +13,11 @@ import 'package:lango/Register/OTP.dart';
 import 'package:lango/Register/Register.dart';
 import 'package:lango/Register/Settings.dart';
 import 'package:lango/Register/Choose_Language.dart';
+import 'package:lango/Constance/Constance.dart';
+import 'package:lango/Feed/Feed.dart';
+import 'package:lango/Feed/Creat_Post.dart';
+import 'package:lango/Chats/Chat_Dashboard.dart';
+import 'package:lango/Chats/Chats/Chats.dart';
 
 void main() {
   runApp(const MyApp());
