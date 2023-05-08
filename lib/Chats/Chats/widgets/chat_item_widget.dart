@@ -3,7 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class ChatItemWidget extends StatelessWidget {
-  ChatItemWidget();
+  final String name;
+  final String photo;
+  final String latestChat;
+  ChatItemWidget(
+      {required this.photo, required this.name, required this.latestChat});
 
   Size size = WidgetsBinding.instance.window.physicalSize /
       WidgetsBinding.instance.window.devicePixelRatio;
@@ -76,8 +80,8 @@ class ChatItemWidget extends StatelessWidget {
               ),
             ),
             child: Container(
-              height: getVerticalSize(40),
-              width: getHorizontalSize(40),
+              height: getVerticalSize(50),
+              width: getHorizontalSize(50),
               decoration: BoxDecoration(
                 color: Color(0xFFffffff),
                 border: Border.all(
@@ -94,38 +98,8 @@ class ChatItemWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              child: Stack(
-                children: [
-                  IconButton(
-                    visualDensity: VisualDensity(
-                      vertical: -4,
-                      horizontal: -4,
-                    ),
-                    iconSize: 46,
-                    padding: EdgeInsets.all(0),
-                    icon: Container(
-                      alignment: Alignment.center,
-                      width: 48,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: getHorizontalSize(
-                            1.00,
-                          ),
-                        ),
-                        borderRadius: BorderRadius.circular(
-                          getHorizontalSize(
-                            24.00,
-                          ),
-                        ),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/images/img_user_gray_200_48x48.svg',
-                      ),
-                    ),
-                    onPressed: () {},
-                  )
-                ],
+              child: CircleAvatar(
+                backgroundImage: AssetImage(photo),
               ),
             ),
           ),
@@ -139,7 +113,7 @@ class ChatItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  "Classroom 09",
+                  name,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -154,7 +128,7 @@ class ChatItemWidget extends StatelessWidget {
                     top: 5,
                   ),
                   child: Text(
-                    "Tanks!",
+                    latestChat,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
                     style: TextStyle(
