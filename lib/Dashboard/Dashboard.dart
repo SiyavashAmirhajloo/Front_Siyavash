@@ -30,7 +30,7 @@ class _DashboardScreenState extends State<Dashboard> {
                       ? Feed()
                       : index == 3
                           ? ChatDashboard()
-                          : Coin_Pack(),
+                          : ChatDashboard(),
           Padding(
             padding: const EdgeInsets.all(20),
             child: Container(

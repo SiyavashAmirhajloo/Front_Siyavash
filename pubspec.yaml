@@ -46,6 +46,8 @@ dependencies:
   petitparser: ^5.1.0
   convert: ^3.1.1
   scaled_list: ^2.0.0
+  table_calendar: ^3.0.9
+  flutter_countdown_timer: ^4.1.0
 
 dev_dependencies:
   flutter_test:
