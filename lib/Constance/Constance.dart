@@ -3,7 +3,34 @@ var secondaryColorString = '#FFFFFF';
 
 class ConstanceData {
   static String bseImageUrl = 'assets/images/';
-  static String logo = bseImageUrl + "logo.png";
+  static String Splash = bseImageUrl + "Splash.png";
+
+  static String p1 = bseImageUrl + "p1.png";
+  static String p8 = bseImageUrl + "p8.png";
+  static String p9 = bseImageUrl + "p9.png";
+  static String dp8 = bseImageUrl + "p8.png";
+  static String dp9 = bseImageUrl + "p9.png";
+  static String p11 = bseImageUrl + "p11.png";
+  static String dp11 = bseImageUrl + "dp11.png";
+  static String u1 = bseImageUrl + "Username.png";
+  static String time1 = bseImageUrl + "time.png";
+  static String vec1 = bseImageUrl + "vector.png";
+  static String lang = bseImageUrl + "language_icon.png";
+  static String s2 = bseImageUrl + "s2.png";
+  static String s4 = bseImageUrl + "s4.png";
+  static String r2 = bseImageUrl + "r2.png";
+  static String test = bseImageUrl + "Test.png";
+  static String back = bseImageUrl + "back.png";
+  static String avatar = bseImageUrl + "Avatar.png";
+
+  static String n26 = bseImageUrl + "n26.png";
+  static String n27 = bseImageUrl + "n27.png";
+  static String n28 = bseImageUrl + "n28.png";
+  static String n29 = bseImageUrl + "n29.png";
+  static String n30 = bseImageUrl + "n30.png";
+  static String n31 = bseImageUrl + "n31.png";
+  static String n32 = bseImageUrl + "ir.png";
+
   static String sch_av = bseImageUrl + "sch_av.png";
   static String sch_cp = bseImageUrl + "sch_cp.png";
   static String sch_pc = bseImageUrl + "sch_pc.png";
@@ -53,4 +80,24 @@ class ConstanceData {
   static String da_vi = bseImageUrl + "da_vi.png";
   static String da_co = bseImageUrl + "da_co.png";
   static String da_bu = bseImageUrl + "da_bu.png";
+
+  static String ob1 = bseImageUrl + "ob1.png";
+  static String dob1 = bseImageUrl + "ob1.png";
+  static String ob1_2 = bseImageUrl + "ob1_2.png";
+  static String dob1_2 = bseImageUrl + "ob1_2.png";
+  static String ob2 = bseImageUrl + "ob2.png";
+  static String dob2 = bseImageUrl + "ob2.png";
+  static String ob2_2 = bseImageUrl + "ob2_2.png";
+  static String dob2_2 = bseImageUrl + "ob2_2.png";
+  static String ob3 = bseImageUrl + "ob3.png";
+  static String dob3 = bseImageUrl + "ob3.png";
+  static String ob3_2 = bseImageUrl + "ob3_2.png";
+  static String dob3_2 = bseImageUrl + "ob3_2.png";
+  static String ob4 = bseImageUrl + "ob4.png";
+  static String dob4 = bseImageUrl + "ob4.png";
+  static String ob4_2 = bseImageUrl + "ob4_2.png";
+  static String dob4_2 = bseImageUrl + "ob4_2.png";
+
+  static String p5 = bseImageUrl + "p5.png";
+  static String dp5 = bseImageUrl + "dp5.png";
 }
