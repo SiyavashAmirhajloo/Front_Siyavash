@@ -18,6 +18,10 @@ class ConstanceData {
   static String lang = bseImageUrl + "language_icon.png";
   static String s2 = bseImageUrl + "s2.png";
   static String s4 = bseImageUrl + "s4.png";
+  static String r2 = bseImageUrl + "r2.png";
+  static String test = bseImageUrl + "Test.png";
+  static String back = bseImageUrl + "back.png";
+  static String avatar = bseImageUrl + "Avatar.png";
 
   static String n26 = bseImageUrl + "n26.png";
   static String n27 = bseImageUrl + "n27.png";

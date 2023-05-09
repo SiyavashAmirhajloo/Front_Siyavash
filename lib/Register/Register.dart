@@ -237,79 +237,111 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Container(
                           height: 69,
                           child: Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: MyTextFieald(
-                              suffixIcon: IconButton(
-                                icon: AppTheme.isLightTheme
-                                    ? Image.asset(
-                                        ConstanceData.p9,
-                                        height: 21,
-                                      )
-                                    : Image.asset(
-                                        ConstanceData.dp9,
-                                        height: 21,
-                                      ),
-                                onPressed: () {},
-                              ),
-                              click: () {
-                                showModalBottomSheet<void>(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return ListView(
-                                      padding:
-                                          EdgeInsets.only(top: 130, bottom: 0),
-                                      children: [
-                                        Container(
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                child: TableCalendar(
-                                                  firstDay: DateTime.utc(
-                                                      2010, 10, 16),
-                                                  lastDay:
-                                                      DateTime.utc(2030, 3, 14),
-                                                  focusedDay: DateTime.now(),
-                                                ),
-                                              ),
-                                            ],
+                            padding: const EdgeInsets.only(
+                                left: 15, bottom: 15, top: 10, right: 15),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  suffixIcon: IconButton(
+                                    icon: AppTheme.isLightTheme
+                                        ? Image.asset(
+                                            ConstanceData.p8,
+                                            height: 21,
+                                          )
+                                        : Image.asset(
+                                            ConstanceData.dp8,
+                                            height: 21,
                                           ),
-                                          decoration: BoxDecoration(
-                                            color: AppTheme.isLightTheme
-                                                ? Color(0xFFF4F5F6)
-                                                : Colors.black,
-                                            border: Border.all(
-                                                color: HexColor("#EBEBF0")),
-                                            borderRadius: BorderRadius.only(
-                                              topLeft:
-                                                  const Radius.circular(8.0),
-                                              topRight:
-                                                  const Radius.circular(8.0),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
-                              lableText: 'Birthday',
-                              lableStyle: TextStyle(
-                                fontFamily: 'ProductSans',
-                                fontSize: 14,
-                                color: Color(0xFF777E90),
-                              ),
+                                    onPressed: () {},
+                                  ),
+                                  //click: () {},
+                                  labelText: 'Birthday',
+                                  labelStyle: TextStyle(
+                                    fontFamily: 'ProductSans',
+                                    fontSize: 14,
+                                    color: Color(0xFF777E90),
+                                    // fontWeight: FontWeight.bold,
+                                  )),
                             ),
-                            // Text(
-                            //   'Birthday',
-                            //   style: TextStyle(
-                            //       fontFamily: 'ProductSans',
-                            //       fontSize: 14,
-                            //       color: Color(0xFF777E90)),
-                            // ).data!,
                           ),
                         ),
+                        // Divider(),
+                        // Container(
+                        //   height: 69,
+                        //   child: Padding(
+                        //     padding: const EdgeInsets.all(15),
+                        //     child: MyTextFieald(
+                        //       suffixIcon: IconButton(
+                        //         icon: AppTheme.isLightTheme
+                        //             ? Image.asset(
+                        //                 ConstanceData.p9,
+                        //                 height: 21,
+                        //               )
+                        //             : Image.asset(
+                        //                 ConstanceData.dp9,
+                        //                 height: 21,
+                        //               ),
+                        //         onPressed: () {},
+                        //       ),
+                        //       click: () {
+                        //         showModalBottomSheet<void>(
+                        //           context: context,
+                        //           builder: (BuildContext context) {
+                        //             return ListView(
+                        //               padding:
+                        //                   EdgeInsets.only(top: 130, bottom: 0),
+                        //               children: [
+                        //                 Container(
+                        //                   child: Column(
+                        //                     mainAxisAlignment:
+                        //                         MainAxisAlignment.center,
+                        //                     children: [
+                        //                       Container(
+                        //                         child: TableCalendar(
+                        //                           firstDay: DateTime.utc(
+                        //                               2010, 10, 16),
+                        //                           lastDay:
+                        //                               DateTime.utc(2030, 3, 14),
+                        //                           focusedDay: DateTime.now(),
+                        //                         ),
+                        //                       ),
+                        //                     ],
+                        //                   ),
+                        //                   decoration: BoxDecoration(
+                        //                     color: AppTheme.isLightTheme
+                        //                         ? Color(0xFFF4F5F6)
+                        //                         : Colors.black,
+                        //                     border: Border.all(
+                        //                         color: HexColor("#EBEBF0")),
+                        //                     borderRadius: BorderRadius.only(
+                        //                       topLeft:
+                        //                           const Radius.circular(8.0),
+                        //                       topRight:
+                        //                           const Radius.circular(8.0),
+                        //                     ),
+                        //                   ),
+                        //                 ),
+                        //               ],
+                        //             );
+                        //           },
+                        //         );
+                        //       },
+                        //       lableText: 'Birthday',
+                        //       lableStyle: TextStyle(
+                        //         fontFamily: 'ProductSans',
+                        //         fontSize: 14,
+                        //         color: Color(0xFF777E90),
+                        //       ),
+                        //     ),
+                        //     // Text(
+                        //     //   'Birthday',
+                        //     //   style: TextStyle(
+                        //     //       fontFamily: 'ProductSans',
+                        //     //       fontSize: 14,
+                        //     //       color: Color(0xFF777E90)),
+                        //     // ).data!,
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

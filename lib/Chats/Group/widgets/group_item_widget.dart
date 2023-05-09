@@ -3,7 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class GroupItemWidget extends StatelessWidget {
-  GroupItemWidget();
+  final String name;
+  final String photo;
+  final int membersCount;
+  GroupItemWidget(
+      {required this.photo, required this.name, required this.membersCount});
 
   Size size = WidgetsBinding.instance.window.physicalSize /
       WidgetsBinding.instance.window.devicePixelRatio;
@@ -27,40 +31,8 @@ class GroupItemWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Padding(
-            padding: EdgeInsets.zero,
-            child: IconButton(
-              visualDensity: VisualDensity(
-                vertical: -4,
-                horizontal: -4,
-              ),
-              iconSize: 46,
-              padding: EdgeInsets.all(0),
-              icon: Container(
-                alignment: Alignment.center,
-                width: 48,
-                height: 48,
-                padding: EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Color(0xFF3657ff),
-                  border: Border.all(
-                    color: Color(0xFF3657ff),
-                    width: getHorizontalSize(
-                      1.00,
-                    ),
-                  ),
-                  borderRadius: BorderRadius.circular(
-                    getHorizontalSize(
-                      24.00,
-                    ),
-                  ),
-                ),
-                child: SvgPicture.asset(
-                  'assets/images/img_user_white_a700_48x48.svg',
-                ),
-              ),
-              onPressed: () {},
-            ),
+          CircleAvatar(
+            backgroundImage: AssetImage(photo),
           ),
           Padding(
             padding: EdgeInsets.only(
@@ -73,7 +45,8 @@ class GroupItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  "IELTS 8",
+                  name,
+                  // "IELTS 8",
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -88,7 +61,7 @@ class GroupItemWidget extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(top: 8),
                     child: Text(
-                      "5 member",
+                      membersCount.toString() + " member",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: TextStyle(
