@@ -3,11 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class ChatItemWidget extends StatelessWidget {
-  final String name;
-  final String photo;
-  final String latestChat;
-  ChatItemWidget(
-      {required this.photo, required this.name, required this.latestChat});
+  ChatItemWidget();
 
   Size size = WidgetsBinding.instance.window.physicalSize /
       WidgetsBinding.instance.window.devicePixelRatio;
@@ -80,8 +76,8 @@ class ChatItemWidget extends StatelessWidget {
               ),
             ),
             child: Container(
-              height: getVerticalSize(50),
-              width: getHorizontalSize(50),
+              height: getVerticalSize(40),
+              width: getHorizontalSize(40),
               decoration: BoxDecoration(
                 color: Color(0xFFffffff),
                 border: Border.all(
@@ -89,7 +85,7 @@ class ChatItemWidget extends StatelessWidget {
                   width: getHorizontalSize(
                     1,
                   ),
-                  strokeAlign: 1,
+                  // strokeAlign: StrokeAlign.,
                 ),
               ).copyWith(
                 borderRadius: BorderRadius.circular(
@@ -98,8 +94,38 @@ class ChatItemWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              child: CircleAvatar(
-                backgroundImage: AssetImage(photo),
+              child: Stack(
+                children: [
+                  IconButton(
+                    visualDensity: VisualDensity(
+                      vertical: -4,
+                      horizontal: -4,
+                    ),
+                    iconSize: 46,
+                    padding: EdgeInsets.all(0),
+                    icon: Container(
+                      alignment: Alignment.center,
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: getHorizontalSize(
+                            1.00,
+                          ),
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          getHorizontalSize(
+                            24.00,
+                          ),
+                        ),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/images/img_user_gray_200_48x48.svg',
+                      ),
+                    ),
+                    onPressed: () {},
+                  )
+                ],
               ),
             ),
           ),
@@ -113,7 +139,7 @@ class ChatItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  name,
+                  "Classroom 09",
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -128,7 +154,7 @@ class ChatItemWidget extends StatelessWidget {
                     top: 5,
                   ),
                   child: Text(
-                    latestChat,
+                    "Tanks!",
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
                     style: TextStyle(

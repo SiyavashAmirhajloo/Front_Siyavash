@@ -1,32 +1,37 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, deprecated_member_use, prefer_const_constructors, sort_child_properties_last
 
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:lango/Constance/constance.dart';
 import 'package:lango/Constance/theme.dart';
 import 'package:lango/Register/Choose_Language.dart';
-import 'package:lango/Widget/textFiealds.dart';
+import 'package:lango/Register/viewmodel/get_register_view_model.dart';
+import 'package:lango/Widget/textField_otp.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:lango/Widget/textFiealds.dart';
-
-class RController extends GetxController with StateMixin {
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-  }
-}
 
 RxString Gender = "Gender".obs;
+TextEditingController _gender = TextEditingController();
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({Key? key}) : super(key: key);
+  final String userId;
+  RegisterScreen({Key? key, required this.userId}) : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  int pageNumber = 0;
+
+  final PageController _pageController = PageController();
+  GetSignupViewModel controller = GetSignupViewModel();
+  TextEditingController textEditingController1 = TextEditingController();
+  TextEditingController textEditingController2 = TextEditingController();
+  TextEditingController textEditingController3 = TextEditingController();
+  TextEditingController textEditingController4 = TextEditingController();
+  TextEditingController textEditingController5 = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,6 +101,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: Padding(
                             padding: const EdgeInsets.all(15),
                             child: TextField(
+                              controller: textEditingController1,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 suffixIcon: IconButton(
@@ -121,13 +127,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                         ),
-                        // TextFormField(
-                        //   style: TextStyle(
-                        //       fontFamily: 'ProductSans',
-                        //       fontSize: 10,
-                        //       fontWeight: FontWeight.bold,
-                        //       color: Color(0xFF141416)),
-                        // ),
                         Divider(),
                         Container(
                           height: 69,
@@ -135,6 +134,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             padding: const EdgeInsets.only(
                                 left: 15, bottom: 15, top: 10, right: 15),
                             child: TextField(
+                              controller: textEditingController2,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   suffixIcon: IconButton(
@@ -166,7 +166,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: Obx(
                             () => Padding(
                               padding: const EdgeInsets.all(15),
-                              child: MyTextFieald(
+                              child: MyTextField(
+                                controller: _gender,
                                 suffixIcon: IconButton(
                                   icon: AppTheme.isLightTheme
                                       ? Image.asset(
@@ -187,7 +188,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     },
                                   );
                                 },
-                                lableText: Gender.value,
+                                lableText: 'Gender',
                                 lableStyle: TextStyle(
                                   fontFamily: 'ProductSans',
                                   fontSize: 14,
@@ -208,6 +209,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               right: 15,
                             ),
                             child: TextField(
+                              controller: textEditingController4,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 suffixIcon: IconButton(
@@ -240,6 +242,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             padding: const EdgeInsets.only(
                                 left: 15, bottom: 15, top: 10, right: 15),
                             child: TextField(
+                              controller: textEditingController5,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   suffixIcon: IconButton(
@@ -265,83 +268,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                         ),
-                        // Divider(),
-                        // Container(
-                        //   height: 69,
-                        //   child: Padding(
-                        //     padding: const EdgeInsets.all(15),
-                        //     child: MyTextFieald(
-                        //       suffixIcon: IconButton(
-                        //         icon: AppTheme.isLightTheme
-                        //             ? Image.asset(
-                        //                 ConstanceData.p9,
-                        //                 height: 21,
-                        //               )
-                        //             : Image.asset(
-                        //                 ConstanceData.dp9,
-                        //                 height: 21,
-                        //               ),
-                        //         onPressed: () {},
-                        //       ),
-                        //       click: () {
-                        //         showModalBottomSheet<void>(
-                        //           context: context,
-                        //           builder: (BuildContext context) {
-                        //             return ListView(
-                        //               padding:
-                        //                   EdgeInsets.only(top: 130, bottom: 0),
-                        //               children: [
-                        //                 Container(
-                        //                   child: Column(
-                        //                     mainAxisAlignment:
-                        //                         MainAxisAlignment.center,
-                        //                     children: [
-                        //                       Container(
-                        //                         child: TableCalendar(
-                        //                           firstDay: DateTime.utc(
-                        //                               2010, 10, 16),
-                        //                           lastDay:
-                        //                               DateTime.utc(2030, 3, 14),
-                        //                           focusedDay: DateTime.now(),
-                        //                         ),
-                        //                       ),
-                        //                     ],
-                        //                   ),
-                        //                   decoration: BoxDecoration(
-                        //                     color: AppTheme.isLightTheme
-                        //                         ? Color(0xFFF4F5F6)
-                        //                         : Colors.black,
-                        //                     border: Border.all(
-                        //                         color: HexColor("#EBEBF0")),
-                        //                     borderRadius: BorderRadius.only(
-                        //                       topLeft:
-                        //                           const Radius.circular(8.0),
-                        //                       topRight:
-                        //                           const Radius.circular(8.0),
-                        //                     ),
-                        //                   ),
-                        //                 ),
-                        //               ],
-                        //             );
-                        //           },
-                        //         );
-                        //       },
-                        //       lableText: 'Birthday',
-                        //       lableStyle: TextStyle(
-                        //         fontFamily: 'ProductSans',
-                        //         fontSize: 14,
-                        //         color: Color(0xFF777E90),
-                        //       ),
-                        //     ),
-                        //     // Text(
-                        //     //   'Birthday',
-                        //     //   style: TextStyle(
-                        //     //       fontFamily: 'ProductSans',
-                        //     //       fontSize: 14,
-                        //     //       color: Color(0xFF777E90)),
-                        //     // ).data!,
-                        //   ),
-                        // ),
                       ],
                     ),
                   ),
@@ -351,69 +277,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(
               height: 20,
             ),
-            // InkWell(
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (_) => (),
-            //       ),
-            //     );
-            //   },
-            //   child: Center(
-            //     child: Container(
-            //       height: 50,
-            //       width: 180,
-            //       decoration: BoxDecoration(
-            //         color: Color(0xFF3757FF),
-            //         borderRadius: BorderRadius.all(Radius.circular(30)),
-            //       ),
-            //       child: Center(
-            //         child: Text(
-            //           "Continue",
-            //           style: Theme.of(context).textTheme.bodyText1!.copyWith(
-            //                 fontFamily: 'ProductSans',
-            //                 fontSize: 15,
-            //                 //fontWeight: FontWeight.bold,
-            //                 color: Colors.white,
-            //               ),
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
-            SizedBox(
-              height: 10,
-            ),
+
             Center(
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChooselanguageScreen(),
-                    ),
-                  );
-                },
-                child: Container(
-                  height: 48,
-                  width: 175,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF3757FF),
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Continue",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontFamily: 'ProductSans',
-                            fontSize: 14,
-                            color: Colors.white,
+              child: controller.inprogressGetSignup
+                  ? CupertinoActivityIndicator()
+                  : InkWell(
+                      onTap: () {
+                        controller.sendSignupNumer(
+                            context,
+                            textEditingController1.text,
+                            textEditingController2.text,
+                            Gender.string,
+                            textEditingController4.text,
+                            textEditingController5.text);
+                        setState(() {
+                          controller.inprogressGetSignup = true;
+                        });
+                      },
+                      child: Container(
+                        height: 48,
+                        width: 175,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF3757FF),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Continue",
+                            style:
+                                Theme.of(context).textTheme.bodyText1!.copyWith(
+                                      fontFamily: 'ProductSans',
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
                           ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ),
             ),
           ],
         ),
@@ -477,9 +377,8 @@ class _ListWidgetState extends State<ListWidget> {
                         onChanged: (value) {
                           setState(() {
                             Gender.value = value.toString();
-
+                            _gender.text = Gender.value;
                             Navigator.of(context).pop();
-
                             //print(Gender);
                           });
                         },
@@ -506,8 +405,8 @@ class _ListWidgetState extends State<ListWidget> {
                         onChanged: (value) {
                           setState(() {
                             Gender.value = value.toString();
+                            _gender.text = Gender.value;
                             Navigator.of(context).pop();
-
                             //print(Gender);
                           });
                         },
@@ -539,8 +438,8 @@ class _ListWidgetState extends State<ListWidget> {
                         onChanged: (value) {
                           setState(() {
                             Gender.value = value.toString();
+                            _gender.text = Gender.value;
                             Navigator.of(context).pop();
-
                             //print(Gender);
                           });
                         },
