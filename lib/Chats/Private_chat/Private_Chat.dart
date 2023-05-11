@@ -135,7 +135,7 @@ class PrivateChatScreen extends StatelessWidget {
                     width: getHorizontalSize(
                       1,
                     ),
-                    // strokeAlign: StrokeAlign.outside,
+                    strokeAlign: BorderSide.strokeAlignOutside,
                   ),
                 ).copyWith(
                   borderRadius: BorderRadius.circular(

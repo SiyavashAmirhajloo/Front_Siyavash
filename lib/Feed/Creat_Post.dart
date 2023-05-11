@@ -3,18 +3,18 @@
 import 'package:lango/Constance/constance.dart';
 import 'package:lango/Constance/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:lango/Widget/textFields.dart';
+import 'package:lango/Widget/textFiealds.dart';
 
-class CreatePostScreen extends StatefulWidget {
-  const CreatePostScreen({super.key});
+class NewPostScreen extends StatefulWidget {
+  const NewPostScreen({super.key});
 
   @override
-  State<CreatePostScreen> createState() => CreatePostScreenState();
+  State<NewPostScreen> createState() => NewPostScreenState();
 }
 
 var post_text = TextEditingController();
 
-class CreatePostScreenState extends State<CreatePostScreen> {
+class NewPostScreenState extends State<NewPostScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

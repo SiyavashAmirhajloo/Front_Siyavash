@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, file_names
 
 import 'package:flutter/foundation.dart';
-import 'package:get/get.dart';
 import 'package:lango/Constance/constance.dart';
 import 'package:lango/Constance/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:lango/Feed/Create_Post.dart';
-import 'package:petitparser/petitparser.dart';
+import 'package:lango/Feed/Creat_Post.dart';
 
 class Feed extends StatefulWidget {
   const Feed({super.key});
@@ -264,10 +262,10 @@ class _FeedState extends State<Feed> {
           child: FloatingActionButton(
             onPressed: () => {
               Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const CreatePostScreen()),
-              )
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewPostScreen(),
+                  )),
             },
             backgroundColor: HexColor("FFC02D"),
             child: Icon(
