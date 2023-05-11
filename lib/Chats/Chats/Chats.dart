@@ -5,7 +5,8 @@ import 'package:lango/Chats/Private_chat/Private_Chat.dart';
 class ChatModel {
   String photo = "";
   String name = "";
-  String latest_chat = "";
+  String latestChat = "";
+  int unreadMsgs = 0;
 }
 
 // ignore_for_file: must_be_immutable
@@ -40,7 +41,8 @@ class ChatScreen extends StatelessWidget {
     return ChatItemWidget(
       photo: model.photo,
       name: model.name,
-      latestChat: model.latest_chat,
+      latestChat: model.latestChat,
+      unreadMsgs: model.unreadMsgs,
     );
   }
 
@@ -50,47 +52,56 @@ class ChatScreen extends StatelessWidget {
     ChatModel model1 = ChatModel();
     model1.photo = 'assets/images/boy1.jpg';
     model1.name = "Samir";
-    model1.latest_chat = "Hi";
+    model1.latestChat = "Hi";
+    model1.unreadMsgs = 1;
 
     ChatModel model2 = ChatModel();
     model2.photo = 'assets/images/boy2.jpg';
     model2.name = "Sam";
-    model2.latest_chat = "tanks!";
+    model2.latestChat = "tanks!";
+    model2.unreadMsgs = 128;
 
     ChatModel model3 = ChatModel();
     model3.photo = 'assets/images/boy3.jpg';
     model3.name = "Tony";
-    model3.latest_chat = "Goodbye";
+    model3.latestChat = "Goodbye";
+    model3.unreadMsgs = 0;
 
     ChatModel model4 = ChatModel();
     model4.photo = 'assets/images/girl1.jpg';
     model4.name = "Sara";
-    model4.latest_chat = "Good!";
+    model4.latestChat = "Good!";
+    model4.unreadMsgs = 138;
 
     ChatModel model5 = ChatModel();
     model5.photo = 'assets/images/boy4.jpg';
     model5.name = "Hank";
-    model5.latest_chat = "GN";
+    model5.latestChat = "GN";
+    model5.unreadMsgs = 3;
 
     ChatModel model6 = ChatModel();
     model6.photo = 'assets/images/girl2.jpg';
     model6.name = "Lily";
-    model6.latest_chat = "Great!";
+    model6.latestChat = "Great!";
+    model6.unreadMsgs = 1024;
 
     ChatModel model7 = ChatModel();
     model7.photo = 'assets/images/boy5.jpg';
     model7.name = "Bob";
-    model7.latest_chat = "Damn";
+    model7.latestChat = "Damn";
+    model7.unreadMsgs = 1;
 
     ChatModel model8 = ChatModel();
     model8.photo = 'assets/images/girl3.jpg';
     model8.name = "Suzanne";
-    model8.latest_chat = "I'll see you";
+    model8.latestChat = "I'll see you";
+    model8.unreadMsgs = 0;
 
     ChatModel model9 = ChatModel();
     model9.photo = 'assets/images/girl4.jpg';
     model9.name = "Olivia";
-    model9.latest_chat = "call me";
+    model9.latestChat = "call me";
+    model9.unreadMsgs = 2;
 
     mList.add(model1);
     mList.add(model2);

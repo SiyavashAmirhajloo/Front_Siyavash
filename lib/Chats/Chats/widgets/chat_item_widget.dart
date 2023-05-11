@@ -2,13 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
-class ChatItemWidget extends StatelessWidget {
+class ChatItemWidget extends StatefulWidget {
   final String name;
   final String photo;
   final String latestChat;
-  ChatItemWidget(
-      {required this.photo, required this.name, required this.latestChat});
+  final int unreadMsgs;
+  ChatItemWidget({
+    required this.photo,
+    required this.name,
+    required this.latestChat,
+    required this.unreadMsgs,
+  });
 
+  @override
+  State<ChatItemWidget> createState() => _ChatItemWidgetState();
+}
+
+class _ChatItemWidgetState extends State<ChatItemWidget> {
   Size size = WidgetsBinding.instance.window.physicalSize /
       WidgetsBinding.instance.window.devicePixelRatio;
 
@@ -99,7 +109,7 @@ class ChatItemWidget extends StatelessWidget {
                 ),
               ),
               child: CircleAvatar(
-                backgroundImage: AssetImage(photo),
+                backgroundImage: AssetImage(widget.photo),
               ),
             ),
           ),
@@ -113,7 +123,8 @@ class ChatItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  name,
+                  widget.name,
+                  // "Classroom 09",
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -128,7 +139,8 @@ class ChatItemWidget extends StatelessWidget {
                     top: 5,
                   ),
                   child: Text(
-                    latestChat,
+                    widget.latestChat,
+                    // "Tanks!",
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
                     style: TextStyle(
@@ -142,6 +154,31 @@ class ChatItemWidget extends StatelessWidget {
               ],
             ),
           ),
+          const Spacer(),
+          Container(
+            child: widget.unreadMsgs != 0
+                ? Container(
+                    width: 30,
+                    height: 30,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      //borderRadius: BorderRadius.circular(100),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Text(
+                      widget.unreadMsgs > 1000
+                          ? "+1k"
+                          : widget.unreadMsgs.toString(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontFamily: 'Product Sans',
+                      ),
+                    ),
+                  )
+                : SizedBox(),
+          )
         ],
       ),
     );
