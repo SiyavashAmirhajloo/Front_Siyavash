@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:lango/core/app_export.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lango/Chats/Private_chat/Private_Chat.dart';
+import 'package:lango/Profile/profile_dashboard.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -151,103 +152,109 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.only(
-                    left: getHorizontalSize(40),
-                    top: getVerticalSize(36),
-                    right: getHorizontalSize(27),
-                  ),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                            padding: EdgeInsets.only(
-                              bottom: getVerticalSize(1),
+                padding: EdgeInsets.only(
+                  left: getHorizontalSize(40),
+                  top: getVerticalSize(36),
+                  right: getHorizontalSize(27),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        bottom: getVerticalSize(1),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "7",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: const Color(0xFFc3c7ca),
+                              fontSize: getSize(16),
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
                             ),
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "7",
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      color: const Color(0xFFc3c7ca),
-                                      fontSize: getSize(16),
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  Text(
-                                    "post",
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      color: const Color(0xFFa3abb2),
-                                      fontSize: getSize(14),
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  )
-                                ])),
-                        const Spacer(flex: 53),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                "150",
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: const Color(0xFFc3c7ca),
-                                  fontSize: getSize(16),
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Text(
-                                "following",
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: const Color(0xFFa3abb2),
-                                  fontSize: getSize(14),
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              )
-                            ]),
-                        const Spacer(flex: 46),
-                        Padding(
-                            padding: EdgeInsets.only(
-                              bottom: getVerticalSize(1),
+                          ),
+                          Text(
+                            "post",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: const Color(0xFFa3abb2),
+                              fontSize: getSize(14),
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
                             ),
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "250",
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      color: const Color(0xFFc3c7ca),
-                                      fontSize: getSize(16),
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  Text(
-                                    "follower",
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      color: const Color(0xFFa3abb2),
-                                      fontSize: getSize(14),
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  )
-                                ]))
-                      ])),
+                          )
+                        ],
+                      ),
+                    ),
+                    const Spacer(flex: 53),
+                    Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "150",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: const Color(0xFFc3c7ca),
+                              fontSize: getSize(16),
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            "following",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: const Color(0xFFa3abb2),
+                              fontSize: getSize(14),
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                        ]),
+                    const Spacer(flex: 46),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        bottom: getVerticalSize(1),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "250",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: const Color(0xFFc3c7ca),
+                              fontSize: getSize(16),
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            "follower",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: const Color(0xFFa3abb2),
+                              fontSize: getSize(14),
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(
                   left: getHorizontalSize(30),
@@ -343,6 +350,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 150,
+                width: 350,
+                child: ProfileDashboard(),
               ),
             ],
           ),
