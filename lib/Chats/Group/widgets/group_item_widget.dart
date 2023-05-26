@@ -2,13 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
-class GroupItemWidget extends StatelessWidget {
+class GroupItemWidget extends StatefulWidget {
   final String name;
   final String photo;
   final int membersCount;
-  GroupItemWidget(
-      {required this.photo, required this.name, required this.membersCount});
+  final int unreadMsgs;
+  GroupItemWidget({
+    required this.photo,
+    required this.name,
+    required this.membersCount,
+    required this.unreadMsgs,
+  });
 
+  @override
+  State<GroupItemWidget> createState() => _GroupItemWidgetState();
+}
+
+class _GroupItemWidgetState extends State<GroupItemWidget> {
   Size size = WidgetsBinding.instance.window.physicalSize /
       WidgetsBinding.instance.window.devicePixelRatio;
 
@@ -32,7 +42,9 @@ class GroupItemWidget extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage(photo),
+            backgroundImage: AssetImage(
+              widget.photo,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(
@@ -45,7 +57,7 @@ class GroupItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  name,
+                  widget.name,
                   // "IELTS 8",
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
@@ -61,7 +73,7 @@ class GroupItemWidget extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(top: 8),
                     child: Text(
-                      membersCount.toString() + " member",
+                      widget.membersCount.toString() + " member",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: TextStyle(
@@ -76,6 +88,31 @@ class GroupItemWidget extends StatelessWidget {
               ],
             ),
           ),
+          const Spacer(),
+          Container(
+            child: widget.unreadMsgs != 0
+                ? Container(
+                    width: 30,
+                    height: 30,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      //borderRadius: BorderRadius.circular(100),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Text(
+                      widget.unreadMsgs > 1000
+                          ? "+1k"
+                          : widget.unreadMsgs.toString(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontFamily: 'Product Sans',
+                      ),
+                    ),
+                  )
+                : SizedBox(),
+          )
         ],
       ),
     );
