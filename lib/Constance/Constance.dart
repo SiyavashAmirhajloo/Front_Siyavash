@@ -22,6 +22,8 @@ class ConstanceData {
   static String test = bseImageUrl + "Test.png";
   static String back = bseImageUrl + "back.png";
   static String avatar = bseImageUrl + "Avatar.png";
+  static String tinyBack = bseImageUrl + "Button-tiny.png";
+  static String ListView = bseImageUrl + "listView.png";
 
   static String n26 = bseImageUrl + "n26.png";
   static String n27 = bseImageUrl + "n27.png";
