@@ -24,6 +24,12 @@ class ConstanceData {
   static String avatar = bseImageUrl + "Avatar.png";
   static String tinyBack = bseImageUrl + "Button-tiny.png";
   static String ListView = bseImageUrl + "listView.png";
+  static String listIcon = bseImageUrl + "Subtract.png";  
+  static String timeIcon = bseImageUrl + "Union.png";
+  static String subject = bseImageUrl + "subject.png";
+  static String interface = bseImageUrl + "interface.png";
+  static String interface1 = bseImageUrl + "interface1.png";
+  static String timeIconGray = bseImageUrl + "Union_gray.png";
 
   static String n26 = bseImageUrl + "n26.png";
   static String n27 = bseImageUrl + "n27.png";
