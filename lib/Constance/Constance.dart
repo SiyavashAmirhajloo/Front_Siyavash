@@ -30,6 +30,12 @@ class ConstanceData {
   static String interface = bseImageUrl + "interface.png";
   static String interface1 = bseImageUrl + "interface1.png";
   static String timeIconGray = bseImageUrl + "Union_gray.png";
+  static String backSmall = bseImageUrl + "Button-small.png";
+  static String question = bseImageUrl + "question.png";
+  static String backSmallWhite = bseImageUrl + "Button-small-white.png";
+  static String arrowLeft = bseImageUrl + "arrow-left.png";
+  static String arrowRight = bseImageUrl + "arrow.png";
+  static String r2Green = bseImageUrl + "r2_green.png";
 
   static String n26 = bseImageUrl + "n26.png";
   static String n27 = bseImageUrl + "n27.png";
