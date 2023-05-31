@@ -36,6 +36,13 @@ class ConstanceData {
   static String arrowLeft = bseImageUrl + "arrow-left.png";
   static String arrowRight = bseImageUrl + "arrow.png";
   static String r2Green = bseImageUrl + "r2_green.png";
+  static String doneFrame = bseImageUrl + "Frame 47199.png";
+  static String jet = bseImageUrl + "mooshak.png";
+  static String grade = bseImageUrl + "Frame 47202.png";
+  static String arrowDown = bseImageUrl + "arrow_down.png";
+  static String star = bseImageUrl + "Star 1 _Stroke_.png";
+  static String coin = bseImageUrl + "Coin.png";
+  static String backD = bseImageUrl + "back_done.png";
 
   static String n26 = bseImageUrl + "n26.png";
   static String n27 = bseImageUrl + "n27.png";
