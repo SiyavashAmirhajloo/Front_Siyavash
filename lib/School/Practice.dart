@@ -129,7 +129,7 @@ class PracticeScreenState extends State<PracticeScreen> {
                       "Ms. Verra Mussies",
                       true),
                   SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                 ],
               ),
