@@ -27,6 +27,9 @@ class TeacherListScreenState extends State<TeacherListScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                SizedBox(
+                  width: 4,
+                ),
                 InkWell(
                   onTap: () {
                     Navigator.pop(context);

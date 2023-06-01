@@ -1,6 +1,7 @@
 import 'package:lango/Constance/Constance.dart';
 import 'package:lango/Constance/Theme.dart';
 import 'package:flutter/material.dart';
+import 'package:lango/School/Course_List.dart';
 import 'package:lango/School/Question_List.dart';
 import 'package:lango/School/Teacher_List.dart';
 
@@ -83,6 +84,14 @@ class _SchoolState extends State<School> {
                     height: 10,
                   ),
                   InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => CourseListScreen(),
+                        ),
+                      );
+                    },
                     child: com2(
                         AppTheme.isLightTheme
                             ? ConstanceData.sch_cou
