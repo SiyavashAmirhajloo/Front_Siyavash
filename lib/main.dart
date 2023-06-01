@@ -9,6 +9,7 @@ import 'package:lango/School/Practice_Summery.dart';
 import 'package:lango/School/Question_Detail.dart';
 import 'package:lango/School/Question_List.dart';
 import 'package:lango/School/School.dart';
+import 'package:lango/School/Teacher_List.dart';
 import 'package:lango/Splash/Splash.dart';
 import 'package:lango/Splash/Onboard.dart';
 import 'package:lango/Dashboard/Dashboard.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.getTheme(),
       debugShowCheckedModeBanner: false,
-      home: PracticeSummaryScreen(),
+      home: School(),
     );
   }
 }

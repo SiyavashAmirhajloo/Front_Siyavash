@@ -2,6 +2,7 @@ import 'package:lango/Constance/Constance.dart';
 import 'package:lango/Constance/Theme.dart';
 import 'package:flutter/material.dart';
 import 'package:lango/School/Question_List.dart';
+import 'package:lango/School/Teacher_List.dart';
 
 class School extends StatefulWidget {
   School({Key? key}) : super(key: key);
@@ -92,12 +93,22 @@ class _SchoolState extends State<School> {
                   SizedBox(
                     height: 10,
                   ),
-                  com2(
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => TeacherListScreen(),
+                        ),
+                      );
+                    },
+                    child: com2(
                       AppTheme.isLightTheme
                           ? ConstanceData.sch_me
                           : ConstanceData.sch_me,
                       "Mentors",
                       "30+"),
+                  ),
                   SizedBox(
                     height: 10,
                   ),
